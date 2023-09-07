@@ -2,7 +2,6 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const argon2 = require('argon2');
 
 const app = express();
 const port = 3000;
@@ -41,8 +40,7 @@ app.get('/login', async (req, res) => {
   }
 });       
 
-// Ruta para iniciar sesión
-app.post('/login', async (req, res) => {
+app.post('/proyecto/login/:DPI', async (req, res) => {
   try {
     const { username, password } = req.body;
     const user = await User.findOne({ username });
@@ -51,13 +49,14 @@ app.post('/login', async (req, res) => {
       return res.status(404).json({ error: 'Usuario no encontrado' });
     }
 
-    const passwordValid = await argon2.verify(user.password, password);
+    const passwordValid = await User.findOne({ password });;
 
     if (!passwordValid) {
       return res.status(401).json({ error: 'Contraseña incorrecta' });
     }
 
-    res.json({ message: 'Inicio de sesión exitoso' });
+    const token = jwt.sign({ user }, secretKey, { expiresIn: Segundos+'s' });
+    res.json({ token });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Hubo un error al iniciar sesión' });
@@ -81,7 +80,7 @@ function verifyToken(req, res, next) {
   }
 }
 
-app.get('/data', verifyToken, (req, res) => {
-  res.json({ message: 'Información protegida', user: req.user });
+app.get('/proyecto/data', verifyToken, (req, res) => {
+  res.json({ message: 'Información protegida' + req.body });
 });
 
