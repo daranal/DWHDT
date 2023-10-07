@@ -11,3 +11,131 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.custom-card {
+  background-color: #f8f9fa; /* Cambia el color de fondo de la tarjeta */
+  border: 1px solid #ced4da; /* Agrega un borde a la tarjeta */
+  border-radius: 8px; /* Redondea las esquinas de la tarjeta */
+  box-shadow: 10 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra a la tarjeta */
+}
+
+/* Estilo para el texto cuando se coloca el cursor sobre la tarjeta */
+.card:hover .card-title {
+  color: green; /* Cambia el color del texto a verde */
+  transition: color 0.2s; /* Agrega una transición suave para el cambio de color */
+}
+
+.fixed-size-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* Estilo para la sombra de las imágenes */
+.custom-card {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra suave */
+}
+
+/* Estilo para las imágenes dentro de las tarjetas */
+.custom-card img {
+  max-width: 100%; /* Limita el ancho máximo de la imagen al ancho de la tarjeta */
+  max-height: 100%; /* Limita la altura máxima de la imagen a la altura de la tarjeta */
+  object-fit: contain; /* Escala la imagen para que quepa completamente en su contenedor sin recortarla ni distorsionarla */
+}
+
+/* Estilos para el botón de compra */
+.btn-primary {
+  background-color: #007bff; /* Cambia el color de fondo del botón */
+  border-color: #007bff; /* Cambia el color del borde del botón */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Cambia el color de fondo del botón al pasar el mouse */
+  border-color: #0056b3; /* Cambia el color del borde del botón al pasar el mouse */
+}
+
+/* Estilo inicial para la imagen */
+.zoom-image {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.6s ease; /* Agrega una transición suave para el efecto de zoom */
+}
+
+/* Estilo cuando el cursor pasa sobre la imagen */
+.zoom-image:hover {
+  transform: scale(1.2); /* Escala la imagen al 120% del tamaño original */
+}
+
+/* Footer.css */
+
+.footer-names {
+  display: flex;
+  flex-direction: column; /* Muestra los nombres en una columna vertical */
+  align-items: center; /* Centra los nombres horizontalmente */
+}
+
+.name {
+  font-size: 18px; /* Cambia el tamaño de fuente de los nombres */
+  font-weight: bold; /* Aplica negrita a los nombres */
+  margin: 5px 0; /* Agrega un pequeño espacio entre los nombres */
+}
+
+.name:hover {
+  color: red; /* Cambia el color al pasar el mouse por encima */
+}
+
+
+/* Header.css */
+
+.nav-link:active {
+  transform: translateY(2px); /* Mueve el texto ligeramente hacia abajo al hacer clic */
+  color: red; /* Cambia el color del texto al hacer clic */
+  transition: transform 0.2s, color 0.2s; /* Agrega transiciones suaves para los cambios */
+}
+
+.nav-link-clicked {
+  transform: translateY(2px); /* Mueve el texto ligeramente hacia abajo al hacer clic */
+  color: red; /* Cambia el color del texto al hacer clic */
+  transition: transform 0.2s, color 0.2s; /* Agrega transiciones suaves para los cambios */
+}
+
+.navbar-brand:hover {
+  color: red; /* Cambia el color del texto al pasar el cursor */
+  transition: color 0.2s; /* Agrega una transición suave para el cambio de color */
+}
+
+/* Estilo para las categorías cuando se coloca el cursor sobre ellas */
+.nav-link:hover {
+  color: green; /* Cambia el color del texto a verde */
+  transition: color 0.2s; /* Agrega una transición suave para el cambio de color */
+}
+
+/* Estilo para la barra de navegación */
+.navbar {
+  background-color: #333; /* Cambia el color de fondo de la barra de navegación */
+  color: white; /* Cambia el color del texto en la barra de navegación */
+}
+
+/* Estilo para los enlaces de navegación (categorías) */
+.navbar-nav .nav-link {
+  color: white; /* Cambia el color del texto de las categorías */
+}
+
+/* Estilo para los enlaces de navegación activos (categorías seleccionadas) */
+.navbar-nav .nav-link.active {
+  font-weight: bold; /* Aplica negrita a las categorías seleccionadas */
+}
+
+/* Estilo para las categorías cuando se coloca el cursor sobre ellas */
+.nav-link:hover {
+  color: green; /* Cambia el color del texto al pasar el cursor */
+  transition: color 0.2s; /* Agrega una transición suave para el cambio de color */
+}
+
+/* Estilo para las categorías cuando se hace clic */
+.nav-link-clicked {
+  color: red; /* Cambia el color del texto al hacer clic */
+  transition: color 0.2s; /* Agrega una transición suave para el cambio de color */
+}
+
